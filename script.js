@@ -53,10 +53,7 @@ loadQuiz();
 
 
 function loadQuiz() {
-    if (submitBtn.classList.contains("correct"))
-        submitBtn.classList.remove("correct");
-    if (submitBtn.classList.contains("wrong"))
-        submitBtn.classList.remove("wrong");
+   
     const currentQuizData = quizData[currentQuiz];
     questionEl.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
@@ -83,14 +80,12 @@ submitBtn.addEventListener("click", () => {
     const answer = getSelected();
 
     if (answer) {
-        setInterval(function() {
+        
             if (answer === quizData[currentQuiz].correct) {
-                submitBtn.classList.add("correct");
+                
                 score++;
-            } else {
-                submitBtn.classList.add("wrong");
             }
-        }, 5000);
+      
 
         currentQuiz++;
         if (currentQuiz < quizData.length) {
